@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《健行天下》健康金融卡 - 合作展示</title>
+    <style>
+        :root {
+            --primary-color: #2a5caa;
+            --secondary-color: #e6f2ff;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        /* 主视觉区域 - 使用CSS渐变和形状代替图片 */
+        .hero-banner {
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #4a89dc 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-banner::before {
+            content: "";
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+        }
+        
+        .hero-banner::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            bottom: -30px;
+            left: -30px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            z-index: 1;
+            padding: 20px;
+        }
+        
+        .hero-content h2 {
+            color: white;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        
+        /* 核心价值区域 */
+        .value-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .value-item {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 25px 15px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: var(--primary-color);
+        }
+        
+        /* 卡片对比表格 */
+        .card-comparison {
+            margin: 40px 0;
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .highlight {
+            background-color: var(--secondary-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        /* 应用场景展示 */
+        .scenario-showcase {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .scenario {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .scenario-visual {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+        
+        .scenario:nth-child(1) .scenario-visual {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .scenario:nth-child(2) .scenario-visual {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+        
+        .scenario:nth-child(3) .scenario-visual {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .scenario-content {
+            padding: 20px;
+        }
+        
+        /* 合作优势区域 */
+        .partner-benefits {
+            margin: 40px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-icon {
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        /* 联系区域 */
+        .contact-section {
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 50px;
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+        
+        @media (max-width: 768px) {
+            .value-item, .scenario {
+                min-width: 100%;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>《健行天下》健康金融卡</h1>
+        <p class="header-subtitle">高端人群健康生活与金融管理的一站式解决方案</p>
+        
+        <div class="hero-banner">
+            <div class="hero-content">
+                <h2>赋能健康生活 · 智享财富未来</h2>
+                <p>融合健康管理与金融服务的创新解决方案</p>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2>产品概览</h2>
+        <p><strong>专为高净值人群打造的一站式健康金融解决方案</strong><br>
+        融合尖端健康管理、优质医疗服务、深度康养体验与灵活金融便利，是企业员工激励、商务馈赠和家庭健康投资的理想选择。</p>
+    </section>
+
+    <section>
+        <h2>核心价值主张</h2>
+        <div class="value-grid">
+            <div class="value-item">
+                <div class="value-icon">🏥</div>
+                <h3>全链条健康管理生态</h3>
+                <p>从AI健康评估到康复服务，构建完整健康闭环</p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">✨</div>
+                <h3>个性化尊享定制</h3>
+                <p>多面值选择，激活后可个性化升级服务</p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-icon">🚀</div>
+                <h3>高效便捷体验</h3>
+                <p>全线上激活与预约，操作简单流畅</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>产品分档权益</h2>
+        <div class="card-comparison">
+            <table>
+                <thead>
+                    <tr>
+                        <th>权益类别</th>
+                        <th>市卡 (¥6600)</th>
+                        <th>省卡 (¥9980)</th>
+                        <th>全国卡 (¥19800)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>医疗陪诊</strong></td>
+                        <td>市级三甲医院</td>
+                        <td>省级三甲医院</td>
+                        <td>全国专家门诊绿色通道</td>
+                    </tr>
+                    <tr>
+                        <td><strong>健康产品</strong></td>
+                        <td>-</td>
+                        <td>全国药食同源特供</td>
+                        <td>全球稀缺资源甄选</td>
+                    </tr>
+                    <tr>
+                        <td><strong>康养权益</strong></td>
+                        <td>-</td>
+                        <td>省内合作门店优享</td>
+                        <td>全国高端康养通道</td>
+                    </tr>
+                    <tr>
+                        <td><strong>保险服务</strong></td>
+                        <td>基础保障优先购</td>
+                        <td>中高端专属配置</td>
+                        <td>高端定制化方案</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>核心应用场景</h2>
+        <div class="scenario-showcase">
+            <div class="scenario">
+                <div class="scenario-visual">💼</div>
+                <div class="scenario-content">
+                    <h4>企业员工福利</h4>
+                    <p>节日礼/年终奖替代/高管福利</p>
+                </div>
+            </div>
+            
+            <div class="scenario">
+                <div class="scenario-visual">🤝</div>
+                <div class="scenario-content">
+                    <h4>商务往来赠礼</h4>
+                    <p>高端客户/合作伙伴维系</p>
+                </div>
+            </div>
+            
+            <div class="scenario">
+                <div class="scenario-visual">👨‍👩‍👧</div>
+                <div class="scenario-content">
+                    <h4>家庭健康关怀</h4>
+                    <p>父母长辈健康投资</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="highlight">
+        <h2>合作优势</h2>
+        
+        <h3>为您带来的商业价值：</h3>
+        <div class="partner-benefits">
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div>精准触达高净值客户群体</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div>丰厚灵活的分销返利机制</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div>共享高端健康服务生态</div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">✓</div>
+                <div>多元化激励指标（销售额/激活率/使用率）</div>
+            </div>
+        </div>
+
+        <h3>我们诚邀：</h3>
+        <ul>
+            <li>医疗机构/康养基地</li>
+            <li>健康产品供应商</li>
+            <li>线下实体服务门店</li>
+            <li>分销渠道合作伙伴</li>
+        </ul>
+    </section>
+
+    <section class="contact-section">
+        <h2>合作咨询</h2>
+        <p><strong>立即加入健康生态网络</strong></p>
+        <div class="contact-methods">
+            <div class="contact-method">
+                <span class="contact-icon">📞</span>
+                <span>电话：400-888-XXXX</span>
+            </div>
+            <div class="contact-method">
+                <span class="contact-icon">✉️</span>
+                <span>邮箱：partner@jianxingtianxia.com</span>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
